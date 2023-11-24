@@ -121,43 +121,165 @@ Feel free to explore and use these commands as needed for managing Huawei OLT de
 
 
 
-# Meu Projeto Incrível :rocket:
 
-Bem-vindo ao meu projeto incrível! Este projeto faz [descrição do projeto] e [outras informações interessantes].
 
-## Recursos
 
-- :heavy_check_mark: Recurso 1
-- :bulb: Recurso 2
-- :chart_with_upwards_trend: Recurso 3
 
-## Como Começar
 
-Siga estas etapas para começar com o projeto:
+Huawei MA56xx OLT Command Lists
 
-1. :fork_and_knife: Faça um fork deste repositório
-2. :arrow_down: Clone o repositório para a sua máquina local
-3. :computer: Execute `npm install` para instalar as dependências
-4. :rocket: Execute `npm start` para iniciar o aplicativo
+Exibição da versão atual e patch do OLT:
 
-## Contribuindo
+shell
+Copy code
+display version
+display patch all
+Visualização da configuração atual:
 
-Sinta-se à vontade para contribuir com este projeto. Se você deseja adicionar novos recursos ou corrigir problemas, siga estas etapas:
+shell
+Copy code
+display current-configuration
+Salvar a configuração:
 
-1. :fork_and_knife: Faça um fork deste repositório
-2. :arrow_down: Clone o repositório para a sua máquina local
-3. :rocket: Crie uma nova branch para a sua contribuição (`git checkout -b minha-contribuicao`)
-4. :pencil: Faça suas alterações e faça commit (`git commit -m 'Adicionei um novo recurso'`)
-5. :arrow_up: Envie suas alterações para o seu fork (`git push origin minha-contribuicao`)
-6. :octocat: Abra um pull request neste repositório
+shell
+Copy code
+save
+Visualização da configuração atual em seções específicas:
 
-## Contato
+shell
+Copy code
+display current-configuration | section vlan
+display current-configuration | section gpon
+display current-configuration | section btv
+display current-configuration | section device
+display current-configuration | section post
+display current-configuration | section abs
+display current-configuration | section public
+display current-configuration | section global
+Visualização da configuração atual em que um texto específico é encontrado:
 
-Se você tiver alguma dúvida ou precisar de assistência, entre em contato conosco em [seu-email@example.com].
+shell
+Copy code
+display current-configuration | include 485754431CBD8333
+Exemplo de visualização de várias estatísticas:
 
-## Licença
+shell
+Copy code
+display board 0
+display board 0/5
+display cpu 0/5
+display resource
+display security config
+display temperature
+display gpon statistics ethernet 0/5 0
+Informações sobre o cartão MCUD GE0 do MA5608T:
 
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE.md](LICENSE.md) para obter detalhes.
+shell
+Copy code
+MA5608T#config
+MA5608T(config)#interface mcu 0/2
+MA5608T(config-if-mcu-0/2)#display port ddm-info 0
+MA5608T(config-if-mcu-0/2)#display port traffic 0
+Informações sobre a porta GE0 do cartão SCUN do MA5683T:
 
-:sunglasses: Divirta-se codificando! :computer:
+shell
+Copy code
+MA5683T#config
+MA5683T(config)#interface scu 0/8
+MA5683T(config-if-scu-0/8)#display port ddm-info 0
+MA5683T(config-if-scu-0/8)#display port traffic 0
+Exibição de alarmes ativos:
 
+shell
+Copy code
+display alarm active all
+Informações de tempo:
+
+shell
+Copy code
+display time
+display timezone
+display time dst
+display time time-stamp
+display time-range
+display ntp-service
+Exemplo de configuração de proteção contra DoS:
+
+shell
+Copy code
+display security anti-dos control-packet rate 0/5/0
+display security dos-blacklist all
+Exibição de endereços MAC:
+
+shell
+Copy code
+display mac-address vlan 1501
+display mac-address service-port 12
+display mac-address port 0/5/0
+display mac-address all
+display mac-address all | include 000c-29b9-3331
+Limpar endereço MAC:
+
+shell
+Copy code
+Gponsolution-MA5683T#config
+Gponsolution-MA5683T(config)#undo mac-address mac 000c-29b9-3331 vlan 1501
+Exibição de endereços ARP:
+
+shell
+Copy code
+display arp all
+Configuração de sobrecarga da CPU de controle:
+
+shell
+Copy code
+display cpu-overload-control parameter
+cpu-overload-control parameter adjustfactor 20
+Habilitar / desabilitar a exibição de alarmes no console:
+
+shell
+Copy code
+alarm output all
+undo alarm output all
+Configuração e visualização de logs:
+
+shell
+Copy code
+display log all
+display log cli
+display log failure
+display log index
+display log memory
+display log name
+display log security
+display log snmp
+display loghost
+log modify operating
+log modify security
+loghost activate
+loghost add
+loghost deactivate
+loghost delete
+display syslog
+syslog disable
+syslog enable
+syslog output
+syslog sync
+Outros comandos:
+
+shell
+Copy code
+cls
+display bandwidth
+display alarm
+display autosave configuration
+display baudrate
+display board number
+Comandos relacionados ao GPON:
+
+shell
+Copy code
+interface gpon
+display ont alarm-profile
+display ont alarm-state
+display ont autofind
