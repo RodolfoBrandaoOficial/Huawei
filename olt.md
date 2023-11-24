@@ -125,62 +125,62 @@ Feel free to explore and use these commands as needed for managing Huawei OLT de
 
 
 
+  - basic command
+  - Huawei MA56xx OLT Command Lists
 
-Huawei MA56xx OLT Command Lists
+  -Exibição da versão atual e patch do OLT:
 
-Exibição da versão atual e patch do OLT:
+  -shell
+  -Copy code
+  -display version
+  -display patch all
+  -Visualização da configuração atual:
 
-shell
-Copy code
-display version
-display patch all
-Visualização da configuração atual:
+  -shell
+  -Copy code
+  -display current-configuration
+  -Salvar a configuração:
 
-shell
-Copy code
-display current-configuration
-Salvar a configuração:
+  -shell
+  -Copy code
+  -save
+  -Visualização da configuração atual em seções específicas:
 
-shell
-Copy code
-save
-Visualização da configuração atual em seções específicas:
+  -shell
+  -Copy code
+  -display current-configuration | section vlan
+  -display current-configuration | section gpon
+  -display current-configuration | section btv
+  -display current-configuration | section device
+  -display current-configuration | section post
+  -display current-configuration | section abs
+  -display current-configuration | section public
+  -display current-configuration | section global
+  -Visualização da configuração atual em que um texto específico é encontrado:
 
-shell
-Copy code
-display current-configuration | section vlan
-display current-configuration | section gpon
-display current-configuration | section btv
-display current-configuration | section device
-display current-configuration | section post
-display current-configuration | section abs
-display current-configuration | section public
-display current-configuration | section global
-Visualização da configuração atual em que um texto específico é encontrado:
+  -shell
+  -Copy code
+  -display current-configuration | include 485754431CBD8333
+  -Exemplo de visualização de várias estatísticas:
 
-shell
-Copy code
-display current-configuration | include 485754431CBD8333
-Exemplo de visualização de várias estatísticas:
+  -shell
+  -Copy code
+  -display board 0
+  -display board 0/5
+  -display cpu 0/5
+  -display resource
+  -display security config
+  -display temperature
+  -display gpon statistics ethernet 0/5 0
+  -Informações sobre o cartão MCUD GE0 do MA5608T:
 
-shell
-Copy code
-display board 0
-display board 0/5
-display cpu 0/5
-display resource
-display security config
-display temperature
-display gpon statistics ethernet 0/5 0
-Informações sobre o cartão MCUD GE0 do MA5608T:
-
-shell
-Copy code
-MA5608T#config
-MA5608T(config)#interface mcu 0/2
-MA5608T(config-if-mcu-0/2)#display port ddm-info 0
-MA5608T(config-if-mcu-0/2)#display port traffic 0
-Informações sobre a porta GE0 do cartão SCUN do MA5683T:
+  -shell
+  -Copy code
+  -MA5608T#config
+  -MA5608T(config)#interface mcu 0/2
+  -MA5608T(config-if-mcu-0/2)#display port ddm-info 0
+  -MA5608T(config-if-mcu-0/2)#display port traffic 0
+  -Informações sobre a porta GE0 do cartão SCUN do MA5683T:
 
 shell
 Copy code
@@ -256,30 +256,30 @@ display log snmp
 display loghost
 log modify operating
 log modify security
-loghost activate
-loghost add
-loghost deactivate
-loghost delete
-display syslog
-syslog disable
-syslog enable
-syslog output
-syslog sync
-Outros comandos:
+  -loghost activate
+  -loghost add
+  -loghost deactivate
+  -loghost delete
+  -display syslog
+  -syslog disable
+  -syslog enable
+  -syslog output
+  -syslog sync
+  -Outros comandos:
 
-shell
-Copy code
-cls
-display bandwidth
-display alarm
-display autosave configuration
-display baudrate
-display board number
-Comandos relacionados ao GPON:
+  -shell
+  -Copy code
+  -cls
+  -display bandwidth
+  -display alarm
+  -display autosave configuration
+  -display baudrate
+  -display board number
+  -Comandos relacionados ao GPON:
 
-shell
-Copy code
-interface gpon
-display ont alarm-profile
-display ont alarm-state
-display ont autofind
+  -shell
+  -Copy code
+  -interface gpon
+  -display ont alarm-profile
+  -display ont alarm-state
+  -display ont autofind
