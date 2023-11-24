@@ -130,156 +130,156 @@ Feel free to explore and use these commands as needed for managing Huawei OLT de
 
   -Exibição da versão atual e patch do OLT:
 
-  -shell
-  -Copy code
-  -display version
-  -display patch all
-  -Visualização da configuração atual:
+  - shell
+  - Copy code
+  - display version
+  - display patch all
+  - Visualização da configuração atual:
 
-  -shell
-  -Copy code
-  -display current-configuration
-  -Salvar a configuração:
+  - shell
+  - Copy code
+  - display current-configuration
+  - Salvar a configuração:
 
-  -shell
-  -Copy code
-  -save
-  -Visualização da configuração atual em seções específicas:
+  - shell
+  - Copy code
+  - save
+  - Visualização da configuração atual em seções específicas:
 
-  -shell
-  -Copy code
-  -display current-configuration | section vlan
-  -display current-configuration | section gpon
-  -display current-configuration | section btv
-  -display current-configuration | section device
-  -display current-configuration | section post
-  -display current-configuration | section abs
-  -display current-configuration | section public
-  -display current-configuration | section global
-  -Visualização da configuração atual em que um texto específico é encontrado:
+  - shell
+  - Copy code
+  - display current-configuration | section vlan
+  - display current-configuration | section gpon
+  - display current-configuration | section btv
+  - display current-configuration | section device
+  - display current-configuration | section post
+  - display current-configuration | section abs
+  - display current-configuration | section public
+  - display current-configuration | section global
+  - Visualização da configuração atual em que um texto específico é encontrado:
 
-  -shell
-  -Copy code
-  -display current-configuration | include 485754431CBD8333
-  -Exemplo de visualização de várias estatísticas:
+  - shell
+  - Copy code
+  - display current-configuration | include 485754431CBD8333
+  - Exemplo de visualização de várias estatísticas:
 
-  -shell
-  -Copy code
-  -display board 0
-  -display board 0/5
-  -display cpu 0/5
-  -display resource
-  -display security config
-  -display temperature
-  -display gpon statistics ethernet 0/5 0
-  -Informações sobre o cartão MCUD GE0 do MA5608T:
+  - shell
+  - Copy code
+  - display board 0
+  - display board 0/5
+  - display cpu 0/5
+  - display resource
+  - display security config
+  - display temperature
+  - display gpon statistics ethernet 0/5 0
+  - Informações sobre o cartão MCUD GE0 do MA5608T:
 
-  -shell
-  -Copy code
-  -MA5608T#config
-  -MA5608T(config)#interface mcu 0/2
-  -MA5608T(config-if-mcu-0/2)#display port ddm-info 0
-  -MA5608T(config-if-mcu-0/2)#display port traffic 0
-  -Informações sobre a porta GE0 do cartão SCUN do MA5683T:
+  - shell
+  - Copy code
+  - MA5608T#config
+  - MA5608T(config)#interface mcu 0/2
+  - MA5608T(config-if-mcu-0/2)#display port ddm-info 0
+  - MA5608T(config-if-mcu-0/2)#display port traffic 0
+  - Informações sobre a porta GE0 do cartão SCUN do MA5683T:
 
-shell
-Copy code
-MA5683T#config
-MA5683T(config)#interface scu 0/8
-MA5683T(config-if-scu-0/8)#display port ddm-info 0
-MA5683T(config-if-scu-0/8)#display port traffic 0
-Exibição de alarmes ativos:
+  - shell
+  - Copy code
+  - MA5683T#config
+  - MA5683T(config)#interface scu 0/8
+  - MA5683T(config-if-scu-0/8)#display port ddm-info 0
+  - MA5683T(config-if-scu-0/8)#display port traffic 0
+  - Exibição de alarmes ativos:
 
-shell
-Copy code
-display alarm active all
-Informações de tempo:
+  - shell
+  - Copy code
+  - display alarm active all
+  - Informações de tempo:
 
-shell
-Copy code
-display time
-display timezone
-display time dst
-display time time-stamp
-display time-range
-display ntp-service
-Exemplo de configuração de proteção contra DoS:
+  - shell
+  - Copy code
+  - display time
+  - display timezone
+  - display time dst
+  - display time time-stamp
+  - display time-range
+  - display ntp-service
+  - Exemplo de configuração de proteção contra DoS:
 
-shell
-Copy code
-display security anti-dos control-packet rate 0/5/0
-display security dos-blacklist all
-Exibição de endereços MAC:
+  - shell
+  - Copy code
+  - display security anti-dos control-packet rate 0/5/0
+  - display security dos-blacklist all
+  - Exibição de endereços MAC:
 
-shell
-Copy code
-display mac-address vlan 1501
-display mac-address service-port 12
-display mac-address port 0/5/0
-display mac-address all
-display mac-address all | include 000c-29b9-3331
-Limpar endereço MAC:
+  - shell
+  - Copy code
+  - display mac-address vlan 1501
+  - display mac-address service-port 12
+  - display mac-address port 0/5/0
+  - display mac-address all
+  - display mac-address all | include 000c-29b9-3331
+  - Limpar endereço MAC:
 
-shell
-Copy code
-Gponsolution-MA5683T#config
-Gponsolution-MA5683T(config)#undo mac-address mac 000c-29b9-3331 vlan 1501
-Exibição de endereços ARP:
+  - shell
+  - Copy code
+  - Gponsolution-MA5683T#config
+  - Gponsolution-MA5683T(config)#undo mac-address mac 000c-29b9-3331 vlan 1501
+  - Exibição de endereços ARP:
 
-shell
-Copy code
-display arp all
-Configuração de sobrecarga da CPU de controle:
+  - shell
+  - Copy code
+  - display arp all
+  - Configuração de sobrecarga da CPU de controle:
 
-shell
-Copy code
-display cpu-overload-control parameter
-cpu-overload-control parameter adjustfactor 20
-Habilitar / desabilitar a exibição de alarmes no console:
+  - shell
+  - Copy code
+  - display cpu-overload-control parameter
+  - cpu-overload-control parameter adjustfactor 20
+  - Habilitar / desabilitar a exibição de alarmes no console:
 
-shell
-Copy code
-alarm output all
-undo alarm output all
-Configuração e visualização de logs:
+  - shell
+  - Copy code
+  - alarm output all
+  - undo alarm output all
+  - Configuração e visualização de logs:
 
-shell
-Copy code
-display log all
-display log cli
-display log failure
-display log index
-display log memory
-display log name
-display log security
-display log snmp
-display loghost
-log modify operating
-log modify security
-  -loghost activate
-  -loghost add
-  -loghost deactivate
-  -loghost delete
-  -display syslog
-  -syslog disable
-  -syslog enable
-  -syslog output
-  -syslog sync
-  -Outros comandos:
+  - shell
+  - Copy code
+  - display log all
+  - display log cli
+  - display log failure
+  - display log index
+  - display log memory
+  - display log name
+  - display log security
+  - display log snmp
+  - display loghost
+  - log modify operating
+  - log modify security
+  - loghost activate
+  - loghost add
+  - loghost deactivate
+  - loghost delete
+  - display syslog
+  - syslog disable
+  - syslog enable
+  - syslog output
+  - syslog sync
+  - Outros comandos:
 
-  -shell
-  -Copy code
-  -cls
-  -display bandwidth
-  -display alarm
-  -display autosave configuration
-  -display baudrate
-  -display board number
-  -Comandos relacionados ao GPON:
+  - shell
+  - Copy code
+  - cls
+  - display bandwidth
+  - display alarm
+  - display autosave configuration
+  - display baudrate
+  - display board number
+  - Comandos relacionados ao GPON:
 
-  -shell
-  -Copy code
-  -interface gpon
-  -display ont alarm-profile
-  -display ont alarm-state
-  -display ont autofind
+  - shell
+  - Copy code
+  - interface gpon
+  - display ont alarm-profile
+  - display ont alarm-state
+  - display ont autofind
