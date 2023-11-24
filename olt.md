@@ -125,8 +125,8 @@ Feel free to explore and use these commands as needed for managing Huawei OLT de
 
 
 
-  - basic command
-  - Huawei MA56xx OLT Command Lists
+##  Basic command
+   Huawei MA56xx OLT Command Lists
 
   -Exibição da versão atual e patch do OLT:
 
