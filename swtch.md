@@ -81,3 +81,88 @@ This repository contains a comprehensive list of commands for configuring and ma
 - Other useful commands like `display arp`, `display interface description`, `display vlan`, `display dhcp server`, `display dhcp client`, etc.
 
 Feel free to explore and use these commands as needed for managing Huawei Switches. 🚀
+
+---
+
+## All Commands 📜
+
+Here is a comprehensive list of all Huawei Switch commands mentioned in this repository:
+
+### Version and Patch Information 📌
+
+- `display version`
+- `display patch all`
+
+### Configuration ⚙️
+
+- `display current-configuration`
+- `save`
+- `display current-configuration | section vlan`
+- `display current-configuration | section interface`
+- `display current-configuration | section route`
+- `display current-configuration | section security`
+- `display current-configuration | section qos`
+- `display current-configuration | section stp`
+- `display current-configuration | section snmp`
+- `display current-configuration | section global`
+
+### Search Configuration 🔍
+
+- `display current-configuration | include <text>`
+
+### Interface Configuration ⚙️
+
+- `display interface brief`
+- `interface <interface>`, `description <description>`
+- `interface <interface>`, `ip address <ip-address> <subnet-mask>`
+- `interface <interface>`, `shutdown`
+- `interface <interface>`, `port link-type <access/trunk/hybrid>`
+- `interface <interface>`, `port default vlan <vlan-id>`
+
+### Routing Configuration 🌐
+
+- `display ip routing-table`
+- `ip route-static <destination> <mask> <next-hop>`
+- `ospf <process-id>`
+- `bgp <process-id>`
+
+### Security 🔒
+
+- `acl number <acl-number>`, `rule <rule-id> permit/deny <protocol> <source-ip> <source-mask> <destination-ip> <destination-mask> [match-order <match-order>]`
+- `interface <interface>`, `packet-filter <acl-number> inbound/outbound`
+- `aaa`
+- `interface <interface>`, `port-security enable`, `port-security max-mac-num <max-mac-num>`
+- `dhcp snooping enable`, `dhcp snooping vlan <vlan-id>`
+- `arp anti-attack check user-bind enable`
+
+### QoS 📶
+
+- `qos policy <policy-name>`
+- `qos behavior <behavior-name>`
+- `interface <interface>`, `qos apply policy <policy-name>`
+- `car <car-name> cir <cir-value> cbs <cbs-value>`
+- `wred <wred-name>`
+
+### Spanning Tree Protocol (STP) ⚙️
+
+- `stp mode <rstp/mstp>`
+- `display stp brief`
+
+### SNMP Configuration 📡
+
+- `snmp-agent sys-info version <v1/v2c/v3>`
+- `snmp-agent community read <community-name> acl <acl-number>`
+- `snmp-agent target-host trap address udp-domain <ip-address> params securityname <security-name> v1v2c`
+
+### Logs and Monitoring 📜
+
+- `display logbuffer`
+- `display cpu-usage`
+- `display interface <interface> traffic`
+- `display mac-address`
+
+### Miscellaneous 🛠️
+
+- Other useful commands like `display arp`, `display interface description`, `display vlan`, `display dhcp server`, `display dhcp client`, etc.
+
+Feel free to explore and use these commands as needed for managing Huawei Switches. 🚀
